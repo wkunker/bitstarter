@@ -23,8 +23,9 @@ app.get('/', function(request, response) {
     indexLoadFail('EXCEPTION NOT CAUGHT');
   }
   var port = process.env.PORT || 5000;
-  app.listen(port, function() {
-    loadIndex();
-    console.log("Listening on " + port);
-  });
+});
+
+app.listen(port, function() {
+  loadIndex();
+  console.log("Listening on " + port);
 });
