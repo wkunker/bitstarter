@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 var indexPage;
 
-var indexLoadFail(e) {
+var indexLoadFail = function(e) {
   console.error('Problem loading index.html -- "' + e + '"');
   process.exit(1)
 }
@@ -14,16 +14,13 @@ try {
   } catch(e) {
     indexLoadFail(e)
   }
-});
-
-if(indexPage === undefined) {
-  indexLoadFail('EXCEPTION NOT CAUGHT')
 }
 
-  app.get('/', function(request, response) {
-
+app.get('/', function(request, response) {
   response.send(indexPage);
-
+  if(indexPage === undefined) {
+    indexLoadFail('EXCEPTION NOT CAUGHT')
+  }
   var port = process.env.PORT || 5000;
   app.listen(port, function() {
     console.log("Listening on " + port);
