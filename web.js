@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 var indexPage;
 
 var indexLoadFail = function(e) {
-  console.error('Problem loading index.html -- "' + e + '"');
+  console.log('Problem loading index.html -- "' + e + '"');
   process.exit(1);
 };
 
