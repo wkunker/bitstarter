@@ -18,12 +18,14 @@ var loadIndex = function() {
 };
 
 app.get('/', function(request, response) {
-  response.send(indexPage);
   if(indexPage === undefined) {
     indexLoadFail('EXCEPTION NOT CAUGHT');
   }
-  var port = process.env.PORT || 5000;
+
+ response.send(indexPage);
 });
+
+var port = process.env.PORT || 5000;
 
 app.listen(port, function() {
   loadIndex();
