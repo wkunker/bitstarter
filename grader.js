@@ -97,7 +97,6 @@ var clone = function(fn) {
 // callback(result, error)
 // callback 'result' is a cheerio instance with the page loaded in (on success)
 var cheerioRestlerHtmlUrl = function(callback, url) {
-    console.log('cheerioRestlerHtmlUrl: ' + url);
   restler.get(url).on('complete', function(result) {
     if(result instanceof Error) {
       console.log('Error while trying to parse ' + url + ': ' + result.message);
@@ -115,7 +114,6 @@ if(require.main == module) {
 	.option('-u, --url <html_url>', 'URL to index.html')
 	.parse(process.argv);
 
-    var checkJson;
     var printResult = function(rslt) {
 	var outJson = JSON.stringify(rslt, null, 4);
 	console.log(outJson);
@@ -124,13 +122,13 @@ if(require.main == module) {
     var type;
     if(program.url) {
 	type = "url";
-	checkJson = checkHtml(program.url, program.checks, type, printResult);
+	checkHtml(program.url, program.checks, type, printResult);
     } else if(program.file) {
 	type = "file";
-	checkJson = checkHtml(program.file, program.checks, type, printResult);
+	checkHtml(program.file, program.checks, type, printResult);
     } else {
 	type = "file"; // Defaults to file
-	checkJson = checkHtml(program.file, program.checks, type, printResult);
+	checkHtml(program.file, program.checks, type, printResult);
     }
 } else {
     exports.checkHtmlFile = checkHtmlFile;
