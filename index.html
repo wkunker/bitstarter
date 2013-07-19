@@ -6,14 +6,26 @@
     <title>
       Bitstarter
     </title>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <style type-"text/css">
+      @media (min-width: 980px) {
+        body {
+          padding-top: 60px;
+        }
+        .linediv-l {
+          border-right: 1px white solid;
+        }
+        .linediv-r {
+          border-left: 1px white solid;
+        }
+      }
+
+      /* Main body and headings */
       body {
-        padding-top: 20px;
-        padding-bottom: 40px;
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
       }
       .container {
-        width: 960px;
+        width: 99%;
       }
       p.lead {
         padding-top: 15px;
@@ -42,7 +54,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="row navigation">
+      <div class="row-fluid navigation">
 	<div class="span2 logo">
 	  Logo
 	</div>
@@ -53,17 +65,17 @@
 	  About
 	</div>
       </div>
-      <div class="row heading">
+      <div class="row-fluid heading">
 	<div class="span12">
 	  <h1>Bitstarter Title</h1>
 	</div>
       </div>
-      <div class="row subheading">
+      <div class="row-fluid subheading">
 	<div class="span12">
 	  <p class="lead">This is my first bitstarter project.</p>
 	</div>
       </div>
-      <div class="row pitch">
+      <div class="row-fluid pitch">
 	<div class="span6 video">
 	  Video
 	</div>
@@ -79,22 +91,22 @@
 	  </div>
 	</div>
       </div>
-      <div class="row section1">
+      <div class="row-fluid section1">
 	<div class="span12">
 	  Marketing Section 1
 	</div>
       </div>
-      <div class="row section2">
+      <div class="row-fluid section2">
 	<div class="span12">
 	  Marketing Section 2
 	</div>
       </div>
-      <div class="row faq">
+      <div class="row-fluid faq">
 	<div class="span12">
 	  FAQ
 	</div>
       </div>
-      <div class="row footer">
+      <div class="row-fluid footer">
 	<div class="span12">
 	  Footer
 	</div>
