@@ -102,6 +102,16 @@
       .footer a {
         color: #ccccff;
       }
+      .caption {
+        text-align: center;
+        color: gray;
+        font-size: 0.9em;
+      }
+      .code {
+        background-color: #2E3436 !important;
+        color: #ffffff !important;
+        font-size: 1em !important;
+      }
     </style>
   </head>
   <body>
@@ -216,9 +226,9 @@
 	    <br><br>
 	    Name your endpoints -- choose as many as you'd like
 	    <br>
-	    Define the data for each endpoint using JSON -- be as specific as you'd like. Tap into the power of the Spect library to add dynamic responses, request-body tests, conditional notifications, and much, much more.
+	    Define the data for each endpoint using JSON -- be as specific as you'd like. Tap into the power of the Spect JSON commands to add dynamic responses, request-body tests, conditional notifications, and much, much more.
 	    <br>
-	    Connect -- Upon setting up your mock API, you'll receive a link to it along with an editing panel, which will stay active until 30 days of inactivity.
+	    Connect -- Upon setting up your mock API, you'll receive a link to it along with an editing panel, which will remain available until you remove it, or 30 days of inactivity have passed.
 	    <br><br>
 	    <b>Test</b>
 	    <br>
@@ -232,7 +242,65 @@
 	  </p>
 	</div>
 	<div class="span5 asset">
+	  <p><pre class="code">
+  [
+    {
+      name: 'clientGetUID',
+      url: 'https://mysite.com/connect',
+      method: 'POST',
+      data: {
+        your:'data',
+        goes:'here'
+      }
+    },
+    {
+      name: 'clientSendMsg',
+      url: 'https://mysite.com/send',
+      method: 'POST',
+      depends: 'client1GetUID',
+      data: {
+        uid: [[clientGetUID.response.session_id]],
+        msg: 'Keep it simple, stupid!'
+      }
+    }
+  ]
+	  </pre></p>
+	  <p class="caption">Example of endpoint testing</p>
+	</div>
+      </div>
+
+
+
+      <div class="row-fluid section3">
+	<div class="span5 offset1 asset">
 	  <img class="img-polaroid" src="http://placehold.it/480x300">
+	</div>
+	<div class="span5 copy">
+	  <p>
+	    <b>Open source</b>
+	    <br>
+	    Fork and modify code as necessary to comply with your project's rigorous needs.
+	    <br><br>
+	    <b>Javascript</b>
+	    <br>
+	    While only JSON is necessary to use APISpect, JS-junkies can easily tweak the tools to their liking.
+
+	    <br><br>
+	    <b>Choose the tool for the job</b>
+	    <br>
+	    Get up and running quickly using the APISpect web interface, or integrate APISpect into your workflow using our command-line tools and API.
+
+	    <br><br>
+	    <b>Other features</b>
+	    <br>
+	    Email reports
+	    <br>
+	    Corner-case testing - Throw a plethora of no-no data at your API
+	    <br>
+	    
+	    <br>
+	    More features upon developer request!
+	  </p>
 	</div>
       </div>
 
