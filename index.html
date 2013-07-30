@@ -262,7 +262,7 @@
       name: 'clientSendMsg',
       url: 'https://mysite.com/send',
       method: 'POST',
-      depends: 'client1GetUID',
+      depends: 'clientGetUID',
       data: {
         uid: [[clientGetUID.response.session_id]],
         msg: 'Keep it simple, stupid!'
