@@ -225,8 +225,30 @@
 
       <div class="row-fluid section1">
 	<div class="span5 offset1 asset">
-	  <!--img class="img-polaroid centeredImage" src="http://placehold.it/480x300"-->
-	  <img class="img-polaroid centeredImage" src="http://i.imgur.com/xqqLBvZ.png">
+	  <p><pre class="code">
+  [
+    {
+      name: 'clientGetUID',
+      url: 'https://mysite.com/connect',
+      method: 'POST',
+      data: {
+        your:'data',
+        goes:'here'
+      }
+    },
+    {
+      name: 'clientSendMsg',
+      url: 'https://mysite.com/send',
+      method: 'POST',
+      depends: 'clientGetUID',
+      data: {
+        uid: [[clientGetUID.response.session_id]],
+        msg: 'Keep it simple, stupid!'
+      }
+    }
+  ]
+	  </pre></p>
+	  <p class="caption">Example of endpoint testing</p>
 	</div>
 	<div class="span5 copy">
 	  <p>
@@ -266,30 +288,7 @@
 	  </p>
 	</div>
 	<div class="span5 asset">
-	  <p><pre class="code">
-  [
-    {
-      name: 'clientGetUID',
-      url: 'https://mysite.com/connect',
-      method: 'POST',
-      data: {
-        your:'data',
-        goes:'here'
-      }
-    },
-    {
-      name: 'clientSendMsg',
-      url: 'https://mysite.com/send',
-      method: 'POST',
-      depends: 'clientGetUID',
-      data: {
-        uid: [[clientGetUID.response.session_id]],
-        msg: 'Keep it simple, stupid!'
-      }
-    }
-  ]
-	  </pre></p>
-	  <p class="caption">Example of endpoint testing</p>
+	  <img class="img-polaroid centeredImage" src="http://i.imgur.com/xqqLBvZ.png">
 	</div>
       </div>
 
